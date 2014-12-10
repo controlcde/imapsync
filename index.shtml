@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
 <title>Official imapsync migration tool ( release <!--#exec cmd="cat ./VERSION"--> )</title>
 <meta name="generator" content="Bluefish 1.0.7"/>
 <meta name="author" content="Gilles LAMIRAL"/>
-<meta name="date" content="2013-10-17T03:39:01+0200"/>
+<meta name="date" content="2014-11-14T18:01:28+0100"/>
 <meta name="copyright" content="None"/>
 <meta name="keywords" content="imap, transfert, migration"/>
 <meta name="description" content="imap migration tool"/>
@@ -16,29 +18,38 @@
 <link rel="icon" type="image/png" href="W/images/logo_imapsync_s.png" />
 <link href="W/style.css" rel="stylesheet" type="text/css"/>
 
-<style type="text/css">
-
-.none
-{
-   list-style-type: none;
-}
-
-</style>
 
 </head>
+
 <body>
 
+<!-- 
+<div id="fb-root"></div>
+<script type="text/javascript" src="W/fb-root.js"></script>
+ -->
 <ul class="none">
-	<li>Buy <a href="#buy_source"><b>imapsync source code</b></a> (any OS)</li>
-	<li>Buy <a href="#buy_exe"><b>standalone win32</b></a> <b>imapsync.exe</b> (also <b>works on win64</b>)</li>
-   <li>Buy <b>full professional</b> <a href="#buy_support">imapsync <b>support</b></a> to successfully perform your migration</li>
 	<li>Are your <a href="#imap_server_success">imap servers <b>supported</b></a> by imapsync?</li>
+   <li>Buy <a href="#buy_all"><b>imapsync</b></a> ( imapsync.exe + source code for any OS )</li>
 </ul>
 
-<div class="center">
-<a href="http://imapsync.lamiral.info/"><img src="W/images/logo_imapsync.png" width="486" height="309"  alt="imapsync logo"/></a>
+
+<div id="right-poll">
+<script type="text/javascript" src="http://www.micropoll.com/a/MicroPoll?id=3880191">
+</script>
+</div>
+
+
+<div id="centered-logo" class="center">
+<a href="http://imapsync.lamiral.info/">
+<img src="W/images/logo_imapsync.png" width="486" height="309"  alt="imapsync logo"/>
+</a>
 
 <h1>Welcome to the imapsync web site!</h1>
+
+<!-- I use ssi here only to pass a strict xhtml validation that facebook can't pass -->
+<!--#include file="W/tw-hash.html" -->
+<!-- include file="W/fb-like.html" -->
+
 </div>
 
 <h2>What is imapsync?</h2>
@@ -46,7 +57,7 @@
 <p>
 The purpose of imapsync is to <b>migrate</b> IMAP accounts or to <b>backup</b> IMAP accounts. 
 IMAP is one of the three current standard protocols to access mailboxes, 
-the two other are POP3 and HTTP with webmails (often tied to an IMAP server).   
+the two other are POP3 and HTTP with webmails, webmail are often tied to an IMAP server.   
 </p>
 
 <p><b>imapsync</b> software is a command line tool that allows incremental and
@@ -58,15 +69,15 @@ and restart it later efficiently.
 
 "Recursive" means the complete folders hierarchy can be copied.
 
-"Command line" means it's not a graphical tool, on Windows you have to run imapsync in a DOS box
-(cmd.exe) or from a <a href="#DOC_BASIC">batch file</a>.
+"Command line" means it's not a graphical tool, on Windows you have to run imapsync 
+from a <a href="#DOC_BASIC">batch file</a>.
 </p>
 
 <p>
 <b>imapsync can't migrate Contacts and Calendars</b>. 
 Most email systems don't set or get Contacts or Calendars via the IMAP protocol.
 No way via IMAP, no way via imapsync 
-(but it can be done with other tools or via export/import of csv or ics files).
+but it can be done with other tools or via export/import of csv or ics files.
 </p>
 
 <p>
@@ -81,33 +92,49 @@ for <b>bidirectionnal (2 ways) synchronizations</b>.
 <p>Alternatives to imapsync are listed in the <a href="#similar"><b>Similar softwares</b></a> section.
 </p>
 
-<h2><a id="NUMBERS"></a>Facts and figures for 2011-2013</h2>
+<!--
+<p>Imapsync used to be free, open and gratis, that was before november 2010. 
+Now imapsync is free, open and not gratis from the homepage. 
+Imapsync is still under the <a href="./NOLIMIT">NOLIMIT</a> license, 
+claiming no limit to do anything with this work and this license,
+so one of the most open license of the universe.
+
+It is the best decisions I've made about imapsync to continue to maintain it.
+See detailed explanation and motivation here when 
+<a href="http://www.linux-france.org/prj/imapsync_list/msg00459.html">I looked for a business model</a>.
+
+"Download and donate if happy" doesn't work well.
+"Pay for download and I pay back if unhappy" works well, a 100 times better.
+</p>
+-->
+
+<h2><a id="NUMBERS"></a>Facts and figures for 2011-2014</h2>
 
 <ul>
-<li><b>4000 to 5000 </b>users per month (45000 users a year)</li> 
+<li><b>4000 to 5000 </b>users per month (48000 users a year).</li> 
+<li>6 to 39 millions mailboxes transfers per month.</li>
+<li><b>158 millions</b> transfers for 2013, that is five whole mailboxes synced per second. 
+2014 should reach more than 220 millions transfers.</li>
 
-<li><b>6 to 25 millions mailboxes transfers per month</b>, 
-total is 93 millions for 2011, 91 millions for 2012, should be <b>110 millions for end 2013</b></li>
-
-<li><b>Operating systems</b> run by imapsync users:
+<li><b>Operating systems</b> run by imapsync users (in 2013):
 <ul>
-<li><b>Linux: 72%</b></li>
-<li><b>Win32: 13%</b></li>
+<li><b>Linux: 70%</b></li>
+<li><b>Win32: 14%</b></li>
 <li><b>Darwin: 6%</b></li>
-<li>FreeBSD: 8%</li>
-<li>Solaris: 0.2%</li>
+<li>FreeBSD: 10%</li>
+<li>Solaris: 0.15%</li>
 <li>OpenBSD: 0.02%</li>
-<li>Other: 0.6%</li>
+<li>Other: 0.46%</li>
 </ul>
 </li>
-<li><b>Highest use rate</b>: about <b>21 millions</b> of IMAP mailbox transfers (in a single month)</li>
+<li><b>Highest use rate</b>: about <b>56 millions</b> of IMAP mailbox transfers by just one user</li>
 </ul>
 
 <p>
 Where all those numbers come from?
-To know wether a newer imapsync exists or not imapsync does a http GET to <a href="http://imapsync.lamiral.info/VERSION">VERSION</a>.
-Via the <b>User-agent</b> parameter it also send:</p>
- 
+To know wether a newer imapsync exists or not, imapsync does a http GET to the file
+<a href="http://imapsync.lamiral.info/VERSION">VERSION</a>.
+Via the <b>User-agent</b> parameter it also sends:</p>
 <ul>
  <li>imapsync release</li>
  <li>Perl version</li>
@@ -115,7 +142,9 @@ Via the <b>User-agent</b> parameter it also send:</p>
   <li>Operating System</li>
 </ul>
 
-<p>You can <b>remove this behavior</b> by adding option <b>--noreleasecheck</b> on the command line (or by setting $releasecheck = 0 in the source code)
+<p>You can <b>remove this behavior</b> by adding option <b>--noreleasecheck</b> on the command line 
+(or by setting $releasecheck = 0 in the source code). 
+Check <a href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4279">CVE-2013-4279</a>.
 </p> 
 
 <h2><a id="latest"></a>Latest release is imapsync 
@@ -135,7 +164,7 @@ Via the <b>User-agent</b> parameter it also send:</p>
 
 <!-- 
 <ul>
-<li><b>1.569</b></li>
+<li><b>1.604</b></li>
 <li><b>Enhancement</b>: </li>
 <li><b>Enhancement</b>: </li>
 <li><b>Enhancement</b>: </li>
@@ -156,24 +185,80 @@ Via the <b>User-agent</b> parameter it also send:</p>
  -->
 
 <ul>
-<li><b>1.569</b> Win32 --tmpdir "C:" bugfix</li>
-<li><b>Bug fix</b>: On Win32 trailing blanc in cache dir name raized an error. Blanc is now moved to underscore _</li>
-<li><b>Bug fix</b>: Fixed bug on Windows with for example --tmpdir "E:\TEMP". The colon was badly converted to _, ending with --tmpdir "E_\TEMP".
-This fix also automatically moves the old cache to the new one if the new does not exist yet.</li>
+<li><b>1.607</b> Folders showed also in utf8.</li>
+<li><b>Caveat to upgrade on Unix!</b>: New <b>Unicode::String</b> Perl module dependency, for utf8 output. See the <a href="INSTALL">INSTALL</a> file.</li>
+<li><b>Enhancement</b>: Added --skipemptyfolders to skip empty host1 folders. They are not created on host2.</li>
+<li><b>Enhancement</b>: Windows exe now uses IO::SSL 2.002 instead of 1.98 (is it an really an enhancement?).</li>
+<li><b>Usability</b>: Remove /x from regexes applied with --include and --exclude. Blanks no longer have to be explicit with \ or [ ].</li>
+<li><b>Usability</b>: Added utf8 output for folder names,  utf7imap special characters are not user friendly readable</li>
+<li><b>Usability</b>: Moved foldersizes output after folders lists output.</li>
+<li><b>Usability</b>: Added total size transferred after each message copied.</li>
+<li><b>Usability</b>: After ETA added number of total to be synced, as a denominator dddd after each message copied, nnn/dddd,
+                      where nnn is the number of messages copied. Before there was only nnn without /dddd.</li>
+<li><b>Bug fix</b>: Cache fix on Windows. File paths with brackets [] are special, they have to be escaped with glob. 
+                    For example, [Gmail] must be written [[]Gmail[]].</li>
+<li><b>Bug fix</b>: Added several checks if IsUnconnected. Goal avoid imap commands while disconnected. 
+                    Reconnexion would be better anyway.</li>
 </ul>
 
 <ul>
-<li><b>1.567</b> imapsync.exe crash fix</li>
-<li><b>Enhancement</b>: Added --authmech EXTERNAL.</li>
-<li><b>Bug fix</b>: Fixed a warning when RFC822.SIZE is null or undef.</li>
-<li><b>Bug fix</b>: Fixed imapsync.exe crash with no error message when it exits on a error. Back to Perl 5.16</li>
+<li><b>1.597</b> Small things</li>
+<li><b>Enhancement</b>: Added --nomixfolders to avoid merging folders that are considered different on host1 but the same on destination host2
+because of case sensitivities and insensitivities.</li>
+<li><b>Bug fix</b>: Fixed "imapsync doesn't see created folders in the listing of folder sizes at the end". (second time this bug shows up)</li>
+</ul>
+
+<ul>
+<li><b>1.592</b> Logging by default! (an internal feature now)</li>
+
+<li><b>Caveat to upgrade</b>: New <b>IO::Tee</b> Perl module dependency, for logging. See the <a href="INSTALL">INSTALL</a> file.</li>
+<li><b>Windows upgrade</b>: Win32 binary is now distributed in a zip file with two batches scripts ready to use it.</li>
+
+
+<li><b>Enhancement</b>: Added logging by default in subdirectory <b>./LOG_imapsync/</b></li>
+<li><b>Enhancement</b>: <b>Added option --log turned on by default</b>. Use --nolog to disable logging.</li>
+<li><b>Enhancement</b>: Added option --logfile. Default is like ./LOG_imapsync/YYYY_MM_DD_HH_MM_SS_user2.txt
+                        where YYYY_MM_DD_HH_MM_SS is the launching date and time like 2014_05_20_23_45_10</li>
+<li><b>Enhancement</b>: Added option <b>--disarmreadreceipts</b> to fix resending read receipts on host2. A must with Exchange as host2.</li>
+<li><b>Enhancement</b>: Added FTGate support (no EXAMINE imap command used anymore).</li>
+
+<li><b>Usability</b>: Updated the code to easily switch on --noreleasecheck by default but allowing --releasecheck (some users want this feature).</li>
+<li><b>Usability</b>: Warn syncing messges will not be simulated when --dry mode is on and folder  on host2 does not exist yet.</li>
+
+<li><b>Bug fix</b>: Make TLS works with last IO::Socket::SSL default value (Added SSL_verify_mode => 'SSL_VERIFY_NONE') in --tls mode.</li>
+<li><b>Bug fix</b>: Fixed bug when creating folders on host2 with --sep2=\\ (Lotus Notes).</li>
+<li><b>Bug fix</b>: Try to get folder size when a folder on host2 has the same name but with a different case 
+                    like OLD_MAIL -> old_mail. This avoids "does not exist" output.</li>
+</ul>
+
+<ul>
+<li><b>1.584</b></li>
+<li><b>Enhancement</b>: Added --minmaxlinelength to select messages with long lines only. 
+                        It helps to diagnostic Echange error on messages with lines longer than 9000 characters</li>
+<li><b>Enhancement</b>: Added --debugmaxlinelength</li>
+<li><b>Bug fix</b>: --ssl1 --tls2 was buggy because of default SSL_VERIFY_PEER. 
+                    "Can not go to tls encryption on [localhost]:Unable to start TLS: Cannot determine peer hostname for verification..."</li>
+<li><b>Bug fix</b>: Check if going to tls is ok, exit otherwise with explicit error message.
+Thanks to Dennis Schridde for reporting this ugly bug that deserves this <a href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-2014">CVE-2014-2014</a>.</li>
+<li><b>Debug</b>: Print separator given by NAMESPACE even when --sep1 oe --sep2 is used.</li>
+<li><b>Debug</b>: Prints prefix given by NAMESPACE even when --prefix1 or --prefix2 is used. 
+It is a preparation for advising not to use --prefix unless suggested.</li>
 </ul>
 
 
-<p><b>Good changed</b> made before, listed because <b>they can help</b>:
+<p><b>Good changes</b> made before, listed because <b>they can help</b>:
 </p>
 
 <ul>
+<li><b>Enhancement</b>: Added <b>--skipcrossduplicates</b> to avoid copying messages that are already copied in another folder, good <b>from Gmail to X</b>.</li>
+<li><b>Enhancement</b>: Added --debugcrossduplicates to print which messages (UIDs) are skipped with --skipcrossduplicates (and in what other folders they are).</li>
+<li><b>Enhancement</b>: Added --folderfirst string: sync this folder first. --folderfirst "Work" --folderfirst "Friends"</li>
+<li><b>Enhancement</b>: Added --folderlast  string: sync this folder last. --folderlast "[Gmail]/All Mail" etc.</li>
+<li><b>Enhancement</b>: Added <b>--maxmessagespersecond</b> to limit messages tranfer rate and fix <b>Office365 throttle limitation</b> (use --maxmessagespersecond 4).</li>
+<li><b>Enhancement</b>: Added --maxbytespersecond to limit byte transfer rate.</li>
+<li><b>Enhancement</b>: Added --debugmemory option that prints memory consumption after each message is copied.</li>
+
+<li><b>Enhancement</b>: Added --authmech EXTERNAL.</li>
 <li><b>Enhancement</b>: Adapted behavior for allowing --maxdate --mindate with --noabletosearch. 
 Use internat date instead of Date: header.</li>
 
@@ -275,19 +360,20 @@ by ignoring PERMANENTFLAGS (Exchange tests)</li>
 </ul>
 
 
-<!-- 
-<p>The next imapsync release should see:</p>
-<ul>
-<li>nothing planned</li>
-</ul>
- -->
- 
 <h2><a id="DOC_BASIC"></a>Simple transfer on Windows</h2>
 
 <p>
 Batch file example <b><a href="./examples/imapsync_example.bat">imapsync_example.bat</a></b> 
 that you can easily adapt with your parameters.
 </p>
+
+<h2><a id="DOC_BASIC_UNIX"></a>Simple transfer on Linux</h2>
+
+<p>
+Bourne shell script example <b><a href="./examples/imapsync_example.sh">imapsync_example.sh</a></b> 
+that you can easily adapt with your parameters.
+</p>
+
 
 
 <h2><a id="DOC_MASS"></a>Massive transfers (many mailboxes)</h2>
@@ -309,7 +395,14 @@ example.
 
 <h2><a id="AUTHOR"></a>Who is the author?</h2>
 
-    <p>Gilles LAMIRAL<br/>
+    <p>
+    <a href="http://fr.linkedin.com/in/gilleslamiral">
+    <img src="http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" 
+         width="160" height="33" alt="View Gilles Lamiral's profile on LinkedIn"/>
+    </a>
+    <br/>
+    Gilles LAMIRAL
+    <br/>
     Email: <b>gilles.lamiral@laposte.net</b></p>
 
     <p>Good feedback is always welcome, bad feedback is often welcome.</p>
@@ -321,45 +414,52 @@ example.
     </p>
 
 
+<h2><a id="buy_all"></a>Buy imapsync</h2>
 
-<h2><a id="buy_source"></a>Buy imapsync source code</h2>
-
-<p>Buy <b>latest</b> imapsync Perl <b>source code</b> for  <b>50 EUR</b>
+<p>Buy complete and <b>latest imapsync</b> for <b>50 EUR</b>. 
+There is no trial version but I offer 30-day money back guarantee.
 </p>
 
 <p>
-The Perl <b>imapsync</b> source code will run anywhere a <b>Perl interpreter can run</b>: 
-any Unix, Linux, Windows, or Mac OS operating system.
+For <b>50 EUR</b> you will get:
 </p>
+<ul>
+<li>Standalone <b>imapsync.exe</b> for win32, easy installation done by a zip extraction anywhere. 
+    See <a href="README_Windows.txt">README_Windows.txt</a> for details.</li>
+<li>Imapsync Perl <b>source code</b> for any operating system, Unix, Windows, Macintosh.</li>
+<li><b>Lifetime</b> of imapsync <b>updates</b> without extra payment.</li>
+<li><b>30-day money back guarantee!</b> No question asked nor condition to get a refund, really.</li>
+<li><a href="NOLIMIT">No limit</a> to do anything with imapsync and its license.</li>
+</ul>
+
 
 <p>
-<b>+ Lifetime</b> of imapsync <b>updates</b> without extra payment.<br/>
-<b>+ 30 days money-back guarantee!</b> (any reason qualifies)<br/>
-<b>+</b> Standalone <b>imapsync.exe</b>.<br/>
-</p>
-
-<p>
-Payment by Paypal account and credit card accepted. <br/>
-Price <b>50 EUR</b> is equal to around <b>66 USD</b>, 
-no problem to pay in USD (or any currency) via paypal:
+For <b>100 EUR</b> you can get imapsync <b>full professional support</b>,
+provided by the imapsync designer and developper (Gilles LAMIRAL) who has
+been supporting imap migrations since 2001.
 </p>
 
 
+ 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <p>
 <input type="hidden" name="cmd" value="_s-xclick"/>
-<input type="hidden" name="hosted_button_id" value="GD9PKVDZ53AKW"/>
-<input type="hidden" name="on0" value="imapsync usage"/>imapsync usage
+<input type="hidden" name="hosted_button_id" value="H2YTURNFT4XT4"/>
+<input type="hidden" name="on0" value="imapsync choice"/>imapsync choice
 <select name="os0">
-	<option value="professional">professional </option>
-	<option value="individual">individual </option>
+	<option class="bold" value="Software only. For professional use.">Software only. For professional use. &euro;50,00 EUR</option>
+	<option value="Software only. For individual use.">Software only. For individual use. &euro;50,00 EUR</option>
+	<option class="bold" value="Software + Support. For professional use.">Software + Support. For professional use. &euro;100,00 EUR</option>
+	<option value="Support only. For professional use.">Support only. For professional use. &euro;100,00 EUR</option>
 </select>
 <br/>
 <input type="hidden" name="on1" value="VAT if professional in Europe"/>
-Enter your <b>VAT</b> <input type="text" name="os1" size="17" maxlength="17"/> <b> 
-if you're a European professional</b> (for accounting). 
+Enter your <b>VAT</b> 
+<input type="text" name="os1" size="17" maxlength="17" />
+<b> if you're a European professional</b> (for accounting). 
 It's 2 letters followed by 11 digits, for example mine is FR74429303332.
 <br/>
+
 <input type="hidden" name="currency_code" value="EUR"/>
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" 
 name="submit" alt="PayPal - The safer, easier way to pay online!"/>
@@ -367,121 +467,51 @@ name="submit" alt="PayPal - The safer, easier way to pay online!"/>
 </p>
 </form>
 
-<p>You will receive a <b>download link just after</b> the payment from gilles.lamiral@laposte.net (can fall in Spam folder sometimes).<br/>
-You will also receive a gpg signed <b>invoice</b> within <b>a few days by email</b>.<br/>
-Please give a <b>delivery postal address where the invoice will be needed</b> 
-(your company for example), since reedit is not easy (and forbidden by law).
-</p>
-
-
-<h2><a id="buy_exe"></a>Buy standalone imapsync.exe for win32</h2>
-
-
-
-<p>Struggle free from source code and Perl installation by<br/> 
-buying the latest win32 <b>standalone imapsync.exe</b> for <b>50 EUR</b> 
-</p>
-
 <p>
-<b>+ Lifetime</b> of imapsync <b>updates</b> without extra payment.<br/>
-<b>+ 30 days money-back guarantee!</b> (any reason qualifies)<br/>
-<b>+</b> Source code of <b>imapsync</b>.<br/>
+You will be redirected to a <b>download link just after</b> the payment.<br/>
+You will also receive an email from <b>gilles.lamiral@laposte.net</b> a few minutes later 
+(can fall in Spam folder sometimes).<br/>
+In order to get an accurate invoice, please make sure the delivery postal address you enter in Paypal 
+suits your accounting department's, since revised editing is not easy and prohibited by law.<br/>
+The gpg signed <b>invoice</b> will be sent within <b>a few days by email</b>.
 </p>
 
-<p>
-Payment by Paypal account and credit card accepted. <br/>
-Price <b>50 EUR</b> is equal to around <b>66 USD</b>, 
-no problem to pay in USD (or any currency) via paypal:
-</p>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<p>
-<input type="hidden" name="cmd" value="_s-xclick"/>
-<input type="hidden" name="hosted_button_id" value="6ZFX739JYCCUU"/>
-<input type="hidden" name="on0" value="imapsync usage"/>imapsync usage
-<select name="os0">
-	<option value="professional">professional </option>
-	<option value="individual">individual </option>
-</select>
-<br/>
-<input type="hidden" name="on1" value="VAT if professional in Europe"/>
-Enter your <b>VAT</b> <input type="text" name="os1" size="17" maxlength="17"/> <b> 
-if you're a European professional</b> (for accounting). 
-It's 2 letters followed by 11 digits, for example mine is FR74429303332.
-<br/>
-<input type="hidden" name="currency_code" value="EUR"/>
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" 
-name="submit" alt="PayPal - The safer, easier way to pay online!"/>
-<img alt="" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1"/>
-</p>
-</form>
-
-<p>You will receive a download link <b>just after</b> the payment, from gilles.lamiral@laposte.net (can fall in Spam folder sometimes).<br/>
-You will also receive a gpg signed <b>invoice</b> within <b>a few days by email</b>.<br/>
-Please give a <b>delivery postal address where the invoice will be needed</b> 
-(your company for example), since reedit is not easy (and forbidden by law).
+<p>If you can not pay with a credit card via Paypal then 
+you can use a bank transfer on this bank account:<br/>
+NAME: <b>MR LAMIRAL GILLES</b> <br/>
+IBAN: <b>FR76 1360     6000     9900     0332     2748    564</b> <br/>
+Code BIC/Swift: <b>AGRIFRPP836</b>
 </p>
 
 
-<!-- 
-<p>
-thanks to Strawberry Perl 5.12 and Par::Packer module.<br/>
-The build system for imapsync.exe is XP Pro SP2 on a Intel Celeron 400 MHz 256 Mo RAM. </p>
--->
+<p>For those of you who buy support, <b>contact me</b> (Gilles LAMIRAL) by email or phone:</p>
+<ul>
+<li>Email address: <b>gilles.lamiral@laposte.net</b>.</li>
+<li>Professional phone number: <b>+33 951 84 42 42</b> located in France.</li>
+<li>Mobile phone number: <b>+33 620 79 76 06</b> located in France (SFR).</li>
+<li>Jabber address: <b>gilleslamiral@jabber.org</b></li>
+<li>Google+: <a href="https://plus.google.com/+GillesLamiral/">https://plus.google.com/+GillesLamiral/</a></li>
+<li>Twitter: <a href="https://twitter.com/imapsync">https://twitter.com/imapsync</a></li>
+<li>Facebook: <a href="https://www.facebook.com/imapsync">https://www.facebook.com/imapsync</a></li>
+</ul>
 
-<h2><a id="buy_support"></a>Buy full professional support for imapsync</h2>
-
-<p>You will be able to expose your issues by email 
-or phone and we'll work together until complete success.
+<p>The support is done in English, <b>mostly by email</b> or eventually phone/skype/google+/jabber.
+Office hours start at 10:00, end at 16:00 UTC, extra time is possible in case of emergency.
+The <b>support aims at helping you to get your imap migration job done</b>, quickly if possible.
+Support includes things like <b>no time to read the documentation</b>,
+how to deal with special imap server softwares (Gmail, Exchange), 
+choosing and explaining options, explaining error messages, 
+solving authentication issues, 
+dealing with speed, quotas, special context,
+running in parallel, etc.
 </p>
 
-<p>For <b>100 EUR</b> buy imapsync <b>full support</b> 
-done by the imapsync designer/developper.
-</p>
-
-<p>This support offer <b>doesn't include</b> the imapsync software.</p>
-
-<p>
-Payment by Paypal account and credit card accepted. <br/>
-100 EUR is equal to around <b>133 USD</b>, 
-no problem to pay in USD (or any currency) with paypal:
-</p>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<p>
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="E25UVGFNDJWW8" />
-<input type="hidden" name="on0" value="imapsync usage"/>imapsync usage
-<select name="os0">
-	<option value="professional">professional </option>
-	<option value="individual">individual </option>
-</select>
-<br/>
-<input type="hidden" name="on1" value="VAT if professional in Europe"/>
-Enter your <b>VAT</b> <input type="text" name="os1" size="17" maxlength="17"/> <b> 
-if you're a European professional</b> (for accounting). 
-It's 2 letters followed by 11 digits, for example mine is FR74429303332.
-<br/>
-<input type="hidden" name="currency_code" value="EUR"/>
-<input type="image" 
-	src="https://www.paypalobjects.com/WEBSCR-640-20110401-1/en_US/i/btn/btn_buynowCC_LG.gif"
-	name="submit"
-	alt="PayPal - The safer, easier way to pay online!" />
-<img alt="" src="https://www.paypalobjects.com/WEBSCR-640-20110401-1/fr_FR/i/scr/pixel.gif" width="1" height="1" />
-<input name="return" type="hidden" value="http://imapsync.lamiral.info/W/paypal_return_support.shtml?utm_nooverride=1" />
-</p>
-</form>
-
-<p>You will receive instructions to contact me <b>just after</b> the payment, from gilles.lamiral@laposte.net (can fall in Spam folder sometimes).<br/>
-You will also receive a gpg signed <b>invoice</b> within <b>a few days by email</b>.<br/>
-Please give a <b>delivery postal address where the invoice will be needed</b> 
-(your company for example), since reedit is not easy (and forbidden by law).
-</p>
-
+ 
 <h2><a id="doc"></a>Documentation</h2>
 
 <p>Read the <a href="INSTALL">INSTALL</a> file 
-to know how to install imapsync on your system.
+to know how to install imapsync on your system.<br/>
+Windows users should read directly <a href="README_Windows.txt">README_Windows.txt</a>. 
 </p>
 
 <p>The <a href="README">README</a> file has many tips 
@@ -544,7 +574,7 @@ lists what may be coded or done in the future.
 
 <form method="get" action="http://www.google.com/search">
 <p>  <b>Search</b> in the imapsync list <b>archives</b>: 
-      <input type="text" name="q" value="migrate gmail exchange" size="30" />
+      <input type="text" name="q" value="migrate Gmail Exchange" size="30" />
       <input type="hidden" name="as_sitesearch" value="www.linux-france.org/prj/imapsync_list/" />
       (change the keywords with your own request and press <b>Enter</b>)
 </p>
@@ -560,14 +590,14 @@ lists what may be coded or done in the future.
 
 <p>Let's start with reported <b>failure stories</b> over the past.<br/>
 Maybe <b>new imapsync releases can run successfully with them</b>.<br/>
-Don't hesitate to have a try, It's been a long since last failure occured,
+Don't hesitate to have a try, It's been a long time since last failure occured,
 I will help you and make efforts to switch them to the success list, 
-I like it.
+that's my job.
 </p>
 
 <ul>
-	<li>DBMail 0.9, 2.0.7 (GPL). But most other DBMail releases are supported (see below)</li>
-	<li><b>Hotmail</b> since hotmail.com does not provide IMAP access</li>
+	<li>DBMail 0.9, 2.0.7 (GPL). But most other DBMail releases are supported (see below).</li>
+	<li><b>Hotmail</b> since hotmail.com does not provide IMAP access.</li>
 	<li>Imail 7.04 (maybe).</li>
 	<li>MailEnable 1.54 (Proprietary) but MailEnable 4.23 is supported. </li>
 	<li>(2011) <b>MDaemon 12.0.3</b> as <b>host2</b> 
@@ -577,7 +607,7 @@ I like it.
 </ul>
 
 <p>Now the long reported <b>success stories</b> list: <b>
-57 different imap server softwares supported!</b><br/>
+62 different imap server softwares supported!</b><br/>
 [host1] means "source server" and [host2] means "destination server":
 </p>
 
@@ -598,7 +628,7 @@ I like it.
 	(<a href="http://www.communigate.com/">http://www.communigate.com/</a>) </li>
 	<li>Courier IMAP 1.5.1, 2.2.0, 2.1.1, 2.2.1, 3.0.8, 3.0.3, 4.1.1 (GPL) 
    (<a href="http://www.courier-mta.org/imap/">http://www.courier-mta.org/imap/</a>)   </li>
-	<li>Critical Path (7.0.020)    (<a href=""></a>)   </li>
+	<li>Critical Path (7.0.020)       </li>
    <li>Cyrus IMAP 1.5, 1.6, 
    2.1, 2.1.15, 2.1.16, 2.1.18 
    2.2.1, 2.2.2-BETA, 2.2.3, 2.2.6, 2.2.10, 2.2.12, 2.2.13,
@@ -611,19 +641,21 @@ I like it.
    <li>DBOX 2.41 System [host1] (<a href="http://www.dbox.handshake.de/">http://www.dbox.handshake.de/</a>).</li>
 	<li>Deerfield VisNetic MailServer 5.8.6 [host1]    
 	(<a href="http://www.deerfield.net/products/visnetic-mailserver/">http://www.deerfield.net/products/visnetic-mailserver/</a>)   </li>
-	<li>dkimap4 [host1]    (<a href=""></a>)   </li>
+	<li>dkimap4 [host1]       </li>
 	<li>Domino (Notes) 4.61[host1], 6.5, 5.0.6, 5.0.7, 7.0.2, 6.0.2CF1, 7.0.1[host1], 8.0.1[host1]    
 	(<a href="http://www-01.ibm.com/software/lotus/products/notes/">http://www-01.ibm.com/software/lotus/products/notes/</a>)   </li>
 	<li><b>Dovecot</b> 0.99.10.4, 0.99.14, 0.99.14-8.fc4, 1.0-0.beta2.7, 
    1.0.0 [dest/source] (LGPL) (http://www.dovecot.org/)    (<a href="http://www.dovecot.org/">http://www.dovecot.org/</a>)   </li>
 	<li>Eudora WorldMail v2    (<a href="http://www.eudora.com/worldmail/">http://www.eudora.com/worldmail/</a>)   </li>
+	<li>FirtClass 12 [host1] hard so read the FAQ! (<a href="http://www.firstclass.com/">http://www.firstclass.com/</a>)</li>
+	<li>FTGate [host1][host2] (<a href="http://www.ftgate.com/">http://www.ftgate.com/</a>)</li>
         <li>Fusemail imap.fusemail.net:143 (<a href="https://www.fusemail.com/">https://www.fusemail.com/</a>).</li>
 	<li><b>Gimap</b> (<b>Gmail</b> imap) [host1] [host2]    (<a href="http://mail.google.com/">http://mail.google.com/</a>)   </li>
 	<li>GMX IMAP4 StreamProxy.    (<a href="http://www.gmx.com/">http://www.gmx.com/</a>)   </li>
 	<li>Godaddy IMAP (since Godaddy runs Courier)    (<a href="http://www.godaddy.com/">http://www.godaddy.com/</a>)   </li>
 	<li>Groupwise IMAP (Novell) 6.x and 7.0. Buggy so see the FAQ.    
 	(<a href="http://www.novell.com/products/groupwise/">http://www.novell.com/products/groupwise/</a>)   </li>
-	<li>hMailServer 5.3.3 [host2], 4.4.1 [host1], HMAILSERVER 5.3.2-B1769 on windows 2003 [hsot2]    
+	<li>hMailServer 5.40-B1950 [host12], 5.3.3 [host2], 4.4.1 [host1], HMAILSERVER 5.3.2-B1769 on windows 2003 [hsot2]    
 	(<a href="http://www.hmailserver.com/">http://www.hmailserver.com/</a>)   </li>
 	<li>IceWarp Server 10.4.5 [host1] (<a href="http://www.icewarp.com/">http://www.icewarp.com/</a>)</li>
 	<li>iPlanet Messaging server 4.15, 5.1, 5.2    
@@ -634,7 +666,7 @@ I like it.
 	<li><b>MailEnable</b> 4.23 [host1][host2], 4.26 [host1][host2], 5 [host1]    
 	(<a href="http://www.mailenable.com/">http://www.mailenable.com/</a>)   </li>
 	<li>MDaemon 7.0.1, 8.0.2, 8.1, 9.5.4 (Windows server 2003 R2 platform), 9.6.5 [host1],
-	12 [host2], 12.0.3 [host1], 12.5.5 [host1]    
+	12 [host2], 12.0.3 [host1], 12.5.5 [host1], 13.5 [host2], 14.5 [host2]
 	   (<a href="http://www.altn.com/">http://www.altn.com/</a>)   </li>
 	<li>Mercury 4.1 (Windows server 2000 platform)    (<a href="http://www.pmail.com/">http://www.pmail.com/</a>)   </li>
 	<li><b>Microsoft Exchange Server</b> 5.5, 6.0.6249.0[host1], 6.0.6487.0[host1], 
@@ -660,7 +692,9 @@ I like it.
 	<li>Samsung Contact IMAP server 8.5.0       </li>
 	<li>Scalix v10.1, 10.0.1.3, 11.0.0.431, 11.4.6 (<a href="http://www.scalix.com/">http://www.scalix.com/</a>)   </li>
         <li>Sendmail Mail Store IMAP4rev1 (5.5.6/mstore-5-5-build-1874 [host1].</li>
-	<li>SmarterMail, Smarter Mail 5.0 Enterprise, Smarter Mail 5.5 [host1], SmarterMail Professional 10.2 [host1].    (<a href="http://www.smartertools.com/">http://www.smartertools.com/</a>)   </li>
+	<li>SmarterMail, Smarter Mail 5.0 Enterprise, Smarter Mail 5.5 [host1], SmarterMail Professional 10.2 [host1],
+	    Smarter Mail 11.7 [host1][host2]. 
+	   (<a href="http://www.smartertools.com/">http://www.smartertools.com/</a>)   </li>
 	<li>Softalk Workgroup Mail 7.6.4 [host1] (<a href="http://www.softalkltd.com/products/download_wm_v7.asp">http://www.softalkltd.com/products/download_wm_v7.asp</a>).</li>
 	<li>SunONE Messaging server 5.2, 6.0 (SUN JES - Java Enterprise System)    (<a href="http://www.oracle.com/">http://www.oracle.com/</a>)   </li>
 	<li>Sun Java(tm) System Messaging Server 6.2-2.05,  6.2-7.05,  6.3    (<a href="http://www.oracle.com/">http://www.oracle.com/</a>)   </li>
@@ -680,6 +714,7 @@ I like it.
 <h2><a id="similar"></a>Similar softwares</h2>
 
 <ul>
+<li> <b>imapsync</b>:    <a href="https://github.com/imapsync/imapsync">https://github.com/imapsync/imapsync</a> (imapsync copy, sometimes delayed)</li>
 <li> imap_tools:         <a href="http://www.athensfbc.com/imap_tools">http://www.athensfbc.com/imap_tools</a></li>
 <li> imaputils: <a href="http://code.google.com/p/imaputils/">http://code.google.com/p/imaputils/</a> (imap_tools fork)</li>
 <li> <b>offlineimap</b>: <a href="http://offlineimap.org/">http://offlineimap.org/</a></li>
@@ -689,13 +724,16 @@ I like it.
                          part of the UW IMAP tookit.</li>
 <li> imaprepl:           <a href="http://www.bl0rg.net/software/">http://www.bl0rg.net/software/</a>
                          <a href="http://freecode.com/projects/imap-repl/">http://freecode.com/projects/imap-repl/</a></li>
-<li> imapcopy:           <a href="http://home.arcor.de/armin.diehl/imapcopy/imapcopy.html">http://home.arcor.de/armin.diehl/imapcopy/imapcopy.html</a></li>
+<li> imapcopy (Pascal):  <a href="http://home.arcor.de/armin.diehl/imapcopy/imapcopy.html">http://home.arcor.de/armin.diehl/imapcopy/imapcopy.html</a></li>
+<li> imapcopy (Java):    <a href="https://code.google.com/p/imapcopy/">https://code.google.com/p/imapcopy/</a></li>
 <li> migrationtool:      <a href="http://sourceforge.net/projects/migrationtool/">http://sourceforge.net/projects/migrationtool/</a></li>
 <li> imapmigrate:        <a href="http://sourceforge.net/projects/cyrus-utils/">http://sourceforge.net/projects/cyrus-utils/</a></li>
-<li> larch:              <a href="https://github.com/rgrove/larch">https://github.com/rgrove/larch</a> (derived from wonko_imapsync)</li>
-<li> wonko_imapsync:     <a href="http://wonko.com/article/554">http://wonko.com/article/554</a></li>
+<li> larch:              <a href="https://github.com/rgrove/larch">https://github.com/rgrove/larch</a> (derived from wonko_imapsync, good at Gmail)</li>
+<li> wonko_imapsync:     <a href="http://web.archive.org/web/20130807173030/http://wonko.com/post/ruby_script_to_sync_email_from_any_imap_server_to_gmail">http://wonko.com/article/554</a> (superseded by larch)</li>
 <li> pop2imap:           <a href="http://www.linux-france.org/prj/pop2imap/">http://www.linux-france.org/prj/pop2imap/</a></li>
 <li> exchange-away:      <a href="http://exchange-away.sourceforge.net/">http://exchange-away.sourceforge.net/</a></li>
+<li> SyncBackPro <a href="http://www.2brightsparks.com/syncback/sbpro.html">http://www.2brightsparks.com/syncback/sbpro.html</a></li>
+
 </ul>
 
 <h2>Online IMAP migration services</h2>
@@ -742,7 +780,7 @@ alt="Viewable With Any Browser" />
 <!--#config timefmt="%D" -->
 <!--#config timefmt="%A %B %d, %Y" -->
 <b>This document last modified on <!--#echo var="LAST_MODIFIED" --></b>
-($Id: index.shtml,v 1.186 2013/10/17 01:49:59 gilles Exp gilles $)
+($Id: index.shtml,v 1.227 2014/11/14 23:43:32 gilles Exp gilles $)
 </p>
 
 </body>

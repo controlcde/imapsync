@@ -1,17 +1,190 @@
 
 RCS file: RCS/imapsync,v
 Working file: imapsync
-head: 1.569
+head: 1.607
 branch:
 locks: strict
-	gilles: 1.569
+	gilles: 1.607
 access list:
 symbolic names:
 keyword substitution: kv
-total revisions: 569;	selected revisions: 569
+total revisions: 607;	selected revisions: 607
 description:
 ----------------------------
-revision 1.569	locked by: gilles;
+revision 1.607	locked by: gilles;
+date: 2014/11/14 16:25:06;  author: gilles;  state: Exp;  lines: +46 -40
+Added several checks if IsUnconnected. Goal avoid imap commands while disconnected.
+----------------------------
+revision 1.606
+date: 2014/11/14 14:49:13;  author: gilles;  state: Exp;  lines: +16 -13
+Added total size transferred after each message copied.
+Added number of total to be synced as a denominator dddd after each message copied, nnn/dddd, where nnn is the number of messages copied.
+----------------------------
+revision 1.605
+date: 2014/11/11 00:00:37;  author: gilles;  state: Exp;  lines: +40 -10
+Bugfix. On Windows file path with brackets [] are special. [a] must be written [[]a[]]
+----------------------------
+revision 1.604
+date: 2014/11/08 00:29:26;  author: gilles;  state: Exp;  lines: +36 -9
+Added --skipemptyfolders to skip empty host1 folders. They are not created on host2.
+----------------------------
+revision 1.603
+date: 2014/11/07 22:06:33;  author: gilles;  state: Exp;  lines: +26 -26
+Typo from previous save with gedit and ¤
+----------------------------
+revision 1.602
+date: 2014/11/07 21:57:57;  author: gilles;  state: Exp;  lines: +82 -19
+Added utf8 output for folder names that use special characters in utf7imap
+----------------------------
+revision 1.601
+date: 2014/10/28 10:48:07;  author: gilles;  state: Exp;  lines: +22 -22
+Moved foldersizes call after folders lists print.
+----------------------------
+revision 1.600
+date: 2014/10/27 10:41:52;  author: gilles;  state: Exp;  lines: +8 -8
+Remove /x from regex applied with --include and --exclude. Blanks no longer have to be explicit with \ or [ ].
+----------------------------
+revision 1.599
+date: 2014/10/26 23:42:12;  author: gilles;  state: Exp;  lines: +14 -10
+Added help usage for --nomixfolders
+----------------------------
+revision 1.598
+date: 2014/10/21 00:27:07;  author: gilles;  state: Exp;  lines: +20 -7
+Added tests to check --regextrans2 's,(.*),\L$1,'
+Exchange issue with folders with same name and --delete2.
+----------------------------
+revision 1.597
+date: 2014/10/06 10:48:26;  author: gilles;  state: Exp;  lines: +12 -11
+Changed --nomixdiffcasefolders to --nomixfolders.
+Bugfix. --nomixdiffcasefolders was not parsed in command line so it did not work.
+----------------------------
+revision 1.596
+date: 2014/09/04 17:17:36;  author: gilles;  state: Exp;  lines: +11 -6
+Added --logfile in help output.
+Added --nolog   in help output.
+----------------------------
+revision 1.595
+date: 2014/09/01 19:39:16;  author: gilles;  state: Exp;  lines: +7 -7
+Changed output, no examine anymore, only select.
+----------------------------
+revision 1.594
+date: 2014/08/16 22:40:02;  author: gilles;  state: Exp;  lines: +14 -9
+Fixed "imapsync doesn't see created folders in stats phase". Second time.
+----------------------------
+revision 1.593
+date: 2014/07/08 11:19:43;  author: gilles;  state: Exp;  lines: +18 -7
+Added --nomixdiffcasefolders to avoid merging folders that are considered different on host1 but the same on destination host2 because of case sensitivities and insensitivities.
+----------------------------
+revision 1.592
+date: 2014/05/22 10:03:17;  author: gilles;  state: Exp;  lines: +23 -12
+Bugfix. Make TLS works with last IO::Socket::SSL default value (SSL_verify_mode => 'SSL_VERIFY_NONE') in tls.
+----------------------------
+revision 1.591
+date: 2014/05/22 01:32:52;  author: gilles;  state: Exp;  lines: +30 -19
+Bugfix. IO::Tee and Open3 in backstic() were incompatible.
+FailedBugFix. Tried to fix Tls issue "ERROR: Unable to start TLS: SSL connect attempt failed with unknown error error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed at c:/strawberry/perl/site/lib/Mail/IMAPClient.pm line 455." No success.
+----------------------------
+revision 1.590
+date: 2014/05/20 23:07:14;  author: gilles;  state: Exp;  lines: +12 -6
+Added option --disarmreadreceipts to fix resending read receipts with Exchange as host2.
+----------------------------
+revision 1.589
+date: 2014/05/20 21:35:16;  author: gilles;  state: Exp;  lines: +93 -37
+Added logging by default in subdirectory LOG_imapsync/.
+Added option --log. --log is on by default. --nolog to disable logging.
+Added option --logfile. Default is like LOG_imapsync/YYYY_MM_DD_HH_MM_SS_user2.txt
+where YYYY_MM_DD_HH_MM_SS is the current date and time like 2014_05_20_23_45_10
+Use IO::Tee Perl module for logging.
+Fixed bug when creating folders on host2 with sep2 to \\ (Lotus Notes).
+Updated the code to easily switch on --noreleasecheck by default.
+----------------------------
+revision 1.588
+date: 2014/05/15 10:36:10;  author: gilles;  state: Exp;  lines: +18 -11
+Added FTGate support (no EXAMINE).
+----------------------------
+revision 1.587
+date: 2014/05/09 17:03:27;  author: gilles;  state: Exp;  lines: +14 -7
+Typo when advising about prefix.
+Easy way to switch releasecheck of by default.
+----------------------------
+revision 1.586
+date: 2014/04/10 16:02:39;  author: gilles;  state: Exp;  lines: +9 -7
+Just a test for good_date and pop2imap
+----------------------------
+revision 1.585
+date: 2014/02/17 15:24:34;  author: gilles;  state: Exp;  lines: +39 -34
+Warn syncing messges will not be simulated when --dry mode is on and folder  on host2 does not exist yet.
+Try to get folder size when a folder on host2 has the same name but with a different case like OLD_MAIL -> old_mail. Avoid "does not exist" output.
+----------------------------
+revision 1.584
+date: 2014/02/05 00:40:59;  author: gilles;  state: Exp;  lines: +77 -50
+Debug. Print separator given by NAMESPACE even when --sep1 oe --sep2 is used.
+Debug. Prints prefix given by NAMESPACE even when --prefix1 or --prefix2 is used.
+(Preparation for advising not to use --prefix unless suggested)
+----------------------------
+revision 1.583
+date: 2014/02/04 03:04:35;  author: gilles;  state: Exp;  lines: +15 -11
+Bug fix. --ssl1 --tls2 was buggy because of default SSL_VERIFY_PEER. "Can not go to tls encryption on [localhost]:Unable to start TLS: Cannot determine peer hostname for verificationerror:00000000:lib(0):func(0):reason(0)"
+----------------------------
+revision 1.582
+date: 2014/01/24 01:43:19;  author: gilles;  state: Exp;  lines: +20 -12
+Bugfix. Check if going to tls is ok, exit otherwise with explicit error message.
+Thanks to Dennis Schridde for reporting this ugly bug.
+----------------------------
+revision 1.581
+date: 2014/01/15 02:42:06;  author: gilles;  state: Exp;  lines: +41 -15
+Added --debugmaxlinelength
+Added --minmaxlinelength to select messages with long lines only.
+----------------------------
+revision 1.580
+date: 2013/12/25 02:52:36;  author: gilles;  state: Exp;  lines: +51 -27
+Added --skipcrossduplicates to avoid copying messages that are already copied in another folder.
+Added --debugcrossduplicates to print which messages (UIDs) are skipped with --skipcrossduplicates (and in what other folders they are).
+----------------------------
+revision 1.579
+date: 2013/12/18 13:53:19;  author: gilles;  state: Exp;  lines: +9 -8
+--maxmessagespersecond, value can be float like 3.2
+----------------------------
+revision 1.578
+date: 2013/12/17 02:14:09;  author: gilles;  state: Exp;  lines: +73 -9
+Added --maxbytespersecond to limit byte transfer rate.
+Added --maxmessagespersecond to limit messages tranfer rate (office365 throttle limitation).
+----------------------------
+revision 1.577
+date: 2013/12/05 05:57:51;  author: gilles;  state: Exp;  lines: +28 -10
+Added tests to play with win32 \\?\C:\TEMP syntax and try to solve long path bug.
+----------------------------
+revision 1.576
+date: 2013/11/19 14:37:24;  author: gilles;  state: Exp;  lines: +19 -14
+Added --debugmemory option that prints memory consumption after each message is copied.
+----------------------------
+revision 1.575
+date: 2013/11/06 13:55:38;  author: gilles;  state: Exp;  lines: +12 -7
+Do not append message if the fetch failed.
+----------------------------
+revision 1.574
+date: 2013/10/28 16:22:04;  author: gilles;  state: Exp;  lines: +16 -8
+Added --create_folder_old in case users want the old behavior of create_folder().
+----------------------------
+revision 1.573
+date: 2013/10/28 14:44:10;  author: gilles;  state: Exp;  lines: +48 -7
+Bugfix. Applied patch for create_folder() and nested folders. Thanks to Erik Torsner.
+----------------------------
+revision 1.572
+date: 2013/10/27 02:04:01;  author: gilles;  state: Exp;  lines: +13 -8
+Bug fix. Final statistics were avoided for newly created folders.
+----------------------------
+revision 1.571
+date: 2013/10/25 14:34:27;  author: gilles;  state: Exp;  lines: +58 -20
+Added --folderfirst <string> : Sync this folder first. --folderfirst "Work"
+Added --folderlast  <string> : Sync this folder last. --folderlast "[Gmail]/All Mail"
+--folderlast  <string> : then this one, etc.
+----------------------------
+revision 1.570
+date: 2013/10/25 12:52:02;  author: gilles;  state: Exp;  lines: +7 -7
+--delete2foldersonly Junk example.
+----------------------------
+revision 1.569
 date: 2013/10/16 21:58:17;  author: gilles;  state: Exp;  lines: +125 -39
 Fixed bug on Windows with --tmpdir "E:\TEMP". The colon was badly converted to _, ending with "E_\TEMP".
 The fix also automatically moves the old cache to the new one if the new does not exist yet.
