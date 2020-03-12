@@ -1,0 +1,25 @@
+#!/bin/cat
+$Id: FAQ.Dovecot.txt,v 1.6 2018/05/24 11:34:30 gilles Exp gilles $
+
+This documentation is also available online at
+https://imapsync.lamiral.info/FAQ.d/
+https://imapsync.lamiral.info/FAQ.d/FAQ.Dovecot.txt
+
+
+=======================================================================
+      Imapsync tips for Dovecot. Specific issues and solutions.
+=======================================================================
+
+
+=======================================================================
+Q. How to migrate to Dovecot with an admin/MasterUser account?
+
+R. Dovecot uses the same syntax as uw-imap
+
+  imapsync ... --user2="loginuser*admin_user" --password2 "admin_user_password"
+
+To setup a Dovecot MasterUser see 
+http://wiki2.dovecot.org/Authentication/MasterUsers
+
+=======================================================================
+=======================================================================
